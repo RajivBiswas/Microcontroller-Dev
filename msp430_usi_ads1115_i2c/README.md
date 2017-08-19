@@ -22,10 +22,10 @@ GNU. I believe in freedom, which means I believe in letting you do whatever you 
 
 ## Features
 
-> Small.
-> Works.
-> Reads and writes.
-> Implements repeated start.
+> Small.\
+> Works.\
+> Reads and writes.\
+> Implements repeated start.\
 > Uses the Bus Pirate convention.
 
 ## Rationale
