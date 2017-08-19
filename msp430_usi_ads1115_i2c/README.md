@@ -20,11 +20,12 @@ GNU. I believe in freedom, which means I believe in letting you do whatever you 
 
 Features
 
-Small.
-Works.
-Reads and writes.
-Implements repeated start.
-Uses the Bus Pirate convention.
+> Small.
+> Works.
+> Reads and writes.
+> Implements repeated start.
+> Uses the Bus Pirate convention.
+
 Rationale
 
 I wrote this out of frustration. There is lots of code floating around, most of which I didn't like. TI supplies 
@@ -92,26 +93,22 @@ Read one byte from device 0x1c (which would normally be the contents of register
 The sequence may read multiple bytes:
 
 {0x38, 0x16, I2C_RESTART, 0x39, I2C_READ, I2C_READ, I2C_READ};
-This will normally read three bytes from device 0x1c starting at register 0x16. In this case you need to provide a pointer to a buffer than 
-can hold three bytes.
+This will normally read three bytes from device 0x1c starting at register 0x16. In this case you need to provide a pointer to a buffer than can hold three bytes.
 
-Note that start and stop are added for you automatically, but addressing is fully manual: it is your responsibility to shift the 7-bit I2C 
-address to the left and add the R/W bit. The examples above communicate with a device whose I2C address is 0x1c, which shifted left gives 0x38. 
-For reads we use 0x39, which is (0x1c<<1)|1.
+Note that start and stop are added for you automatically, but addressing is fully manual: it is your responsibility to shift the 7-bit I2C address to the left and add the R/W bit. The examples above communicate with a device whose I2C address is 0x1c, which shifted left gives 0x38. For reads we use 0x39, which is (0x1c<<1)|1.
 
-If you wonder why I consider the Bus Pirate convention useful, note that what you specify in the sequence is very close to the actual bytes 
-on the wire. This makes debugging and reproducing other sequences easy. Also, you can use the Bus Pirate to prototype, and then easily 
-convert the tested sequences into actual code.
+If you wonder why I consider the Bus Pirate convention useful, note that what you specify in the sequence is very close to the actual bytes on the wire. This makes debugging and reproducing other sequences easy. Also, you can use the Bus Pirate to prototype, and then easily convert the tested sequences into actual code.
 
 Steps to use this code:
 
-Add the files to your project.
+- Add the files to your project.
 
-Call i2c_init() with appropriate USI settings:
+- Call i2c_init() with appropriate USI settings:
 
 i2c_init(USIDIV_5, USISSEL_2);
 
-Communicate. Here's an example of performing a read with repeated start (restart) from an MMA845x accelerometer. Note that the chip goes into 
+- Communicate. 
+Here's an example of performing a read with repeated start (restart) from an MMA845x accelerometer. Note that the chip goes into 
 LPM0 sleep while I2C transmission is interrupt-driven. We will get woken up after the transmit/receive is done, but we still check i2c_done() 
 just in case something else woke us up.
 
