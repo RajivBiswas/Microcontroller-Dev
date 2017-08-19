@@ -1,4 +1,29 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+    main.c
+    main function showing how we can use USI I2C Library to READ/WRITE 
+    to ADS1115. The Start Conversion till the Conversion end sequence
+    in Single Shot Mode is as per the Datasheet of ADS1115(Refer 
+    Sec 9.4.2, Pg. 19)
+    
+    Refer the READ/WRITE Timing Diagrams of ADS1115(Refer Sec 9.5.3,
+    Pg. no. 22)
+    
+    Copyright (C) 2017 Rajiv Biswas <rajiv.biswas55@gmail.com>
 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+   ----------------------------------------------------------------------------------------------------------------------------- */
 
 #include "msp430g2452.h"
 #include "usi_i2c.h"
