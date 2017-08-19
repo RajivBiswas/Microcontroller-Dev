@@ -121,7 +121,7 @@ i2c_send_sequence(mma8453_read_interrupt_source, 6, status, LPM0_BITS);
 LPM0; 
 while(!i2c_done()); 
 ```
-### For WRITE (WRITE to the I2C SLAVE(0x38), a 16-bit Value(say 0x8763 in MSB Format) to the \
+### For WRITE (WRITE to the I2C SLAVE(0x38), a 16-bit Value(say 0x8763 in MSB Format) to the
 ### 16-Bit Config Register of address 0x0C
 
 ```
