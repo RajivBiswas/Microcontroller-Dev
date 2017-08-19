@@ -125,5 +125,5 @@ LPM0 sleep while I2C transmission is interrupt-driven. We will get woken up afte
 It does for me: I've been using this code in a number of projects and had no problems with it. I've used it on MSP430G2412 and MSP430G2452 chips. 
 That said, there are no guarantees.
 
-Regards,
+Regards, \
 Rajiv.
