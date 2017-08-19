@@ -69,17 +69,18 @@ This should not be a problem, as performing such lengthy tasks as I2C communicat
 wakeup_sr_bits should be a bit mask of bits to clear in the SR register when the transmission is completed 
 (to exit LPM0: LPM0_BITS (CPUOFF), for LPM3: LPM3_bits (SCG1+SCG0+CPUOFF))
 
-i2c_send_sequence() takes four parameters:
+i2c_send_sequence() takes four parameters: \
 
-handle is the handle returned from i2c_open()
+handle is the handle returned from i2c_open() \
 sequence is the I2C operation sequence that should be performed. It can include any number of writes, restarts and reads. Note that 
 the sequence is composed of uint16_t, not uint8_t elements. This is because we have to support out-of-band signalling of I2C_RESTART 
-and I2C_READ operations, while still passing through 8-bit data.
-sequence_length is the number of sequence elements (not bytes). Sequences of length up to 65535 are supported.
+and I2C_READ operations, while still passing through 8-bit data. \
+sequence_length is the number of sequence elements (not bytes). Sequences of length up to 65535 are supported. \
 received_data should point to a buffer that can hold as many bytes as there are I2C_READ operations in the sequence. If there are no 
-reads, 0 can be passed, as this parameter will not be used.
+reads, 0 can be passed, as this parameter will not be used. \
 
-i2c_send_sequence() uses the Bus Pirate I2C convention, which I found to be very useful and compact. As an example, this Bus Pirate 
+i2c_send_sequence()  \ 
+uses the Bus Pirate I2C convention, which I found to be very useful and compact. As an example, this Bus Pirate 
 sequence:
 ```
  "[0x38 0x0c [ 0x39 r ]"
@@ -88,15 +89,16 @@ is specified as: \
 ```
  {0x38, 0x0c, I2C_RESTART, 0x39, I2C_READ}; 
  ```
-in I2C terms, this sequence means: \
+in I2C terms, this sequence means: 
 
 Write 0x0c to device 0x1c (0x0c is usually the register address).
 Do not release the bus.
-Issue a repeated start.
+Issue a repeated start. \
 Read one byte from device 0x1c (which would normally be the contents of register 0x0c on that device).
-The sequence may read multiple bytes:
-
+The sequence may read multiple bytes: \
+```
 {0x38, 0x16, I2C_RESTART, 0x39, I2C_READ, I2C_READ, I2C_READ};
+```
 This will normally read three bytes from device 0x1c starting at register 0x16. In this case you need to provide a pointer to a buffer than can hold three bytes.
 
 Note that start and stop are added for you automatically, but addressing is fully manual: \
