@@ -1,4 +1,4 @@
-#A TI MSP 430 Launchpad project showing the Application of USI I2C Library to READ/WRITE to ADS1115 16-Bit ADC effectively in a Low Power Single Shot Mode of ADC operation.
+# A TI MSP 430 Launchpad project showing the Application of USI I2C Library to READ/WRITE to ADS1115 16-Bit ADC effectively in a Low Power Single Shot Mode of ADC operation.
 
 TI’s MSP430 chips are rather interesting – they’re low power, very capable, and available for under 
 a dollar in most cases. Some of these chips, though, don’t have native SPI or I2C interfaces;instead, 
@@ -16,11 +16,11 @@ and another for sending and receiving. Easy, small, and it works. Can’t do muc
 This is a small library that implements an I2C (IIC, I²C, or I squared C) master on MSP430 devices that 
 only have the USI module (for example, MSP430G2412 or MSP430G2452).
 
-##License
+## License
 
 GNU. I believe in freedom, which means I believe in letting you do whatever you want with this code.
 
-##Features
+## Features
 
 > Small.
 > Works.
@@ -28,7 +28,7 @@ GNU. I believe in freedom, which means I believe in letting you do whatever you 
 > Implements repeated start.
 > Uses the Bus Pirate convention.
 
-Rationale
+## Rationale
 
 I wrote this out of frustration. There is lots of code floating around, most of which I didn't like. TI supplies 
 examples which seem to have been written by an intern and never looked at again. The examples are overly complex, 
@@ -41,14 +41,14 @@ This code is very, very loosely based on the msp430g2xx2_usi_16.c example from T
 that: the state machine is different (simpler): see doc/usi-i2c-state-diagram.pdf for details, it actually has a useful 
 interface, it is smaller.
 
-Limitations
+## Limitations
 
 This is a simple I2C master that needs to fit on devices that have 128 bytes of RAM, so scale your expectations accordingly. 
 There is no error detection, no arbitration loss detection, only master mode is implemented. Addressing is fully manual: 
 it is your responsibility to shift the 7-bit I2C address to the left and add the R/W bit (actually, I see this as an 
 advantage).
 
-Usage
+## Usage
 
 There are two functions: i2c_init() and i2c_send_sequence().
 
@@ -120,7 +120,7 @@ LPM0 sleep while I2C transmission is interrupt-driven. We will get woken up afte
 > while(!i2c_done());
 
 
-Does it work?
+## Does it work?
 
 It does for me: I've been using this code in a number of projects and had no problems with it. I've used it on MSP430G2412 and MSP430G2452 chips. 
 That said, there are no guarantees.
