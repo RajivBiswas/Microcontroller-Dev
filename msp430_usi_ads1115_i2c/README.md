@@ -53,7 +53,7 @@ advantage).
 There are two functions: i2c_init() and i2c_send_sequence().
 
 You call i2c_init() once to initialize the USI module. You have to provide the constants used to configure the USI clock: 
-one of the USIDIV_* constants as a usi_clock_divider parameter, which will set the clock divider used for USI I2C communications. 
+one of the USIDIV_\* constants as a usi_clock_divider parameter, which will set the clock divider used for USI I2C communications. 
 The usi_clock_source parameter should be set to one of the USISSEL* constants. 
 As an example, 
 i2c_init(USIDIV_5, USISSEL_2) uses SMCLK/16.
