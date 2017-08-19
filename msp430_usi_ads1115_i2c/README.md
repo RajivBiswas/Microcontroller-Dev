@@ -114,7 +114,7 @@ Here's an example of performing a read with repeated start (restart) from an ADS
 LPM0 sleep while I2C transmission is interrupt-driven. We will get woken up after the transmit/receive is done, but we still 
 check i2c_done() just in case something else woke us up.
 
-###### For READ (Read from the I2C SLAVE(0x90)(0x48 << 0x01, 7-Bit I2C Addressing), the 16-Bit Config Register of address 0x0C)  
+###### For READ (Read from the I2C SLAVE(0x90)(0x48 << 0x01, 7-Bit I2C Addressing), the 16-Bit Config Register of address 0x01)  
 ```
 uint16_t ad1115_read_reg[]  = {SLAVE_ADDRESS, 0x01, I2C_RESTART, (SLAVE_ADDRESS | 0x01), I2C_READ, I2C_READ}; 
 uint8_t status[2] = {0x00}; 
@@ -122,7 +122,7 @@ i2c_send_sequence(ad1115_read_reg, 6, status, LPM0_BITS);
 LPM0;
 while(!i2c_done()); 
 ```
-###### For WRITE (WRITE to the I2C SLAVE(0x90)(0x48 << 0x01, 7-Bit I2C Addressing), a 16-bit Value(say 0x8763 in MSB Format) to the 16-Bit Config Register of address 0x0C
+###### For WRITE (WRITE to the I2C SLAVE(0x90)(0x48 << 0x01, 7-Bit I2C Addressing), a 16-bit Value(say 0x8763 in MSB Format) to the 16-Bit Config Register of address 0x01
 
 ```
 
