@@ -1,3 +1,5 @@
+#A TI MSP 430 Launchpad project showing the Application of USI I2C Library to READ/WRITE to ADS1115 16-Bit ADC effectively in a Low Power Single Shot Mode of ADC operation.
+
 TI’s MSP430 chips are rather interesting – they’re low power, very capable, and available for under 
 a dollar in most cases. Some of these chips, though, don’t have native SPI or I2C interfaces;instead, 
 everything is done through a USI, or Universal Serial Interface module. I found the stock I2C USI 
@@ -14,11 +16,11 @@ and another for sending and receiving. Easy, small, and it works. Can’t do muc
 This is a small library that implements an I2C (IIC, I²C, or I squared C) master on MSP430 devices that 
 only have the USI module (for example, MSP430G2412 or MSP430G2452).
 
-License
+##License
 
 GNU. I believe in freedom, which means I believe in letting you do whatever you want with this code.
 
-Features
+##Features
 
 > Small.
 > Works.
