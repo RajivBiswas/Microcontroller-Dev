@@ -110,22 +110,23 @@ Steps to use this code:
 i2c_init(USIDIV_5, USISSEL_2);
 
 - Communicate. 
-Here's an example of performing a read with repeated start (restart) from an MMA845x accelerometer. Note that the chip goes into 
-LPM0 sleep while I2C transmission is interrupt-driven. We will get woken up after the transmit/receive is done, but we still check i2c_done() just in case something else woke us up.
+Here's an example of performing a read with repeated start (restart) from an ADS1115 16-Bit ADC. Note that the chip goes into 
+LPM0 sleep while I2C transmission is interrupt-driven. We will get woken up after the transmit/receive is done, but we still 
+check i2c_done() just in case something else woke us up.
 
-###### For READ (Read from the I2C SLAVE(0x38), the 16-Bit Config Register of address 0x0C)  
+###### For READ (Read from the I2C SLAVE(0x90)(0x48 << 0x01, 7-Bit I2C Addressing), the 16-Bit Config Register of address 0x0C)  
 ```
-uint16_t mma8453_read_interrupt_source[] = {0x38, 0x0c, I2C_RESTART, 0x39, I2C_READ, I2C_READ}; 
+uint16_t ad1115_read_reg[]  = {SLAVE_ADDRESS, 0x01, I2C_RESTART, (SLAVE_ADDRESS | 0x01), I2C_READ, I2C_READ}; 
 uint8_t status[2] = {0x00}; 
-i2c_send_sequence(mma8453_read_interrupt_source, 6, status, LPM0_BITS); 
-LPM0; 
+i2c_send_sequence(ad1115_read_reg, 6, status, LPM0_BITS);
+LPM0;
 while(!i2c_done()); 
 ```
-###### For WRITE (WRITE to the I2C SLAVE(0x38), a 16-bit Value(say 0x8763 in MSB Format) to the 16-Bit Config Register of address 0x0C
+###### For WRITE (WRITE to the I2C SLAVE(0x90)(0x48 << 0x01, 7-Bit I2C Addressing), a 16-bit Value(say 0x8763 in MSB Format) to the 16-Bit Config Register of address 0x0C
 
 ```
 
-uint16_t mma8453_read_interrupt_source[] = {0x38, 0x0c, 0x87, 0x63}; 
+uint16_t mma8453_read_interrupt_source[] = {SLAVE_ADDRESS, 0x0c, 0x87, 0x63}; 
 i2c_send_sequence(mma8453_read_interrupt_source, 4, 0, LPM0_BITS); 
 LPM0; 
 while(!i2c_done()); 
