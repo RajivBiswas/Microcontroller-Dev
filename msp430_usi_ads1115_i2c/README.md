@@ -132,8 +132,8 @@ while(!i2c_done());
 
 ```
 
-uint16_t mma8453_read_interrupt_source[] = {SLAVE_ADDRESS, 0x0c, 0x87, 0x63}; 
-i2c_send_sequence(mma8453_read_interrupt_source, 4, 0, LPM0_BITS); 
+uint16_t ad1115_write_reg[] = {SLAVE_ADDRESS, 0x01, 0x87, 0x63};
+i2c_send_sequence(ad1115_write_reg, 4, 0, LPM0_BITS); 
 LPM0; 
 while(!i2c_done()); 
 ```
