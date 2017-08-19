@@ -81,12 +81,14 @@ reads, 0 can be passed, as this parameter will not be used.
 
 i2c_send_sequence() uses the Bus Pirate I2C convention, which I found to be very useful and compact. As an example, this Bus Pirate 
 sequence:
-
+```
  "[0x38 0x0c [ 0x39 r ]"
-is specified as:
-
- {0x38, 0x0c, I2C_RESTART, 0x39, I2C_READ};
-in I2C terms, this sequence means:
+ ```
+is specified as: \
+```
+ {0x38, 0x0c, I2C_RESTART, 0x39, I2C_READ}; 
+ ```
+in I2C terms, this sequence means: \
 
 Write 0x0c to device 0x1c (0x0c is usually the register address).
 Do not release the bus.
@@ -97,7 +99,9 @@ The sequence may read multiple bytes:
 {0x38, 0x16, I2C_RESTART, 0x39, I2C_READ, I2C_READ, I2C_READ};
 This will normally read three bytes from device 0x1c starting at register 0x16. In this case you need to provide a pointer to a buffer than can hold three bytes.
 
-Note that start and stop are added for you automatically, but addressing is fully manual: it is your responsibility to shift the 7-bit I2C address to the left and add the R/W bit. The examples above communicate with a device whose I2C address is 0x1c, which shifted left gives 0x38. For reads we use 0x39, which is (0x1c<<1)|1.
+Note that start and stop are added for you automatically, but addressing is fully manual: \
+it is your responsibility to shift the 7-bit I2C address to the left and add the R/W bit. The examples above communicate with a device whose I2C address is 0x1c, which shifted left gives 0x38. \
+For reads we use 0x39, which is (0x1c<<1)|1.
 
 If you wonder why I consider the Bus Pirate convention useful, note that what you specify in the sequence is very close to the actual bytes on the wire. This makes debugging and reproducing other sequences easy. Also, you can use the Bus Pirate to prototype, and then easily convert the tested sequences into actual code.
 
