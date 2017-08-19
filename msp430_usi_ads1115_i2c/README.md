@@ -111,11 +111,15 @@ i2c_init(USIDIV_5, USISSEL_2);
 Here's an example of performing a read with repeated start (restart) from an MMA845x accelerometer. Note that the chip goes into 
 LPM0 sleep while I2C transmission is interrupt-driven. We will get woken up after the transmit/receive is done, but we still check i2c_done() just in case something else woke us up.
 
- uint16_t mma8453_read_interrupt_source[] = {0x38, 0x0c, I2C_RESTART, 0x39, I2C_READ};
- uint8_t status;
- i2c_send_sequence(mma8453_read_interrupt_source, 5, &status, LPM0_BITS);
- LPM0;
- while(!i2c_done());
+uint16_t mma8453_read_interrupt_source[] = {0x38, 0x0c, I2C_RESTART, 0x39, I2C_READ};
+
+uint8_t status;
+
+i2c_send_sequence(mma8453_read_interrupt_source, 5, &status, LPM0_BITS);
+
+LPM0;
+
+while(!i2c_done());
 
 
 Does it work?
