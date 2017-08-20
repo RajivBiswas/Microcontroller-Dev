@@ -12,8 +12,11 @@ Memory Buffer Chip, AL422B captures the video image data from the main camera ch
 and we Read the Image Data from the FIFO & WRITE the Image Data in the form of a 
 YUV File on the SD Card. 
 
-Hope you like it. 
+For more understanding please follow the attached Word Document,
+"Interfacing&WritingDriverForA_SCCB_Interface_CameraOV7670withArduino.doc"
 
+Hope you like it. \
+For more queries, please drop me a mail at: rajiv.biswas55@gmail.com
 
 Regards, \
 Rajiv.
