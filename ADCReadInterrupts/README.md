@@ -16,8 +16,8 @@ __interrupt void ADC10ISR (void)
 The EQVal1 array is an Unsigned Integer array of size 1 (4-Bytes) on
 TI MSP430GXX platform. But since the ADC value would be in 10-bit, 1023
 Max, hence we need to consider only 10 bits from the Least significant 
-Bit. Thus, two unsigned byte variables val1 & val2 are considered here. 
-val2 - stores the least 8-bits of the ADC Sample
+Bit. Thus, two unsigned byte variables val1 & val2 are considered here. \
+val2 - stores the least 8-bits of the ADC Sample \
 val1 - stores the last 2-bits of the ADC Sample
     
 The ADC Channel that has been configured here is ADC Channel, A5, P1.5
@@ -35,16 +35,17 @@ which Unpacks the values in neat ASCII Formatted Data Arrays & then
 triggers the Tx, Transmit Interrupt, USCIAB0TX_VECTOR associated with 
 USCI_A0.
     
-The Program has been compiled & built on 
-Code Composer Studio 
-Version: 7.1.0.00016  
+The Program has been compiled & built on \
+Code Composer Studio \
+Version: 7.1.0.00016 \
     
 Connect your Analog Input +ve  to A5, P1.5 & -ve to the Gnd of your TI 
 MSP 430G2 LaunchPad Board & connect a FTDI Serial UART Cable or PL203
 with Rx/Tx connected to P1.1(Rx), P1.2(Tx), with Gnd & Vcc connected to
 corresponding Vcc & Gnd of the TI MSP430G Launchpad Board.
 
-Regards,
+Also please ensure to connect the RxD & TxDJumpers in Vertical Position,
+& not in Horizontal Position, as shown in the attached png file.
+
+Regards, \
 Rajiv.
-    Also please ensure to connect the RxD & TxDJumpers in Vertical Position,
-    & not in Horizontal Position, as shown in the attached png file.
