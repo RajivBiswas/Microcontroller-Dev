@@ -1,5 +1,6 @@
-# Microcontroller-dev
-Development Projects related to Micro-Controllers
+# Microcontroller-Dev
+Development Projects related to MicroControllers
 
 Regards, \
-Rajiv.
+Rajiv
+
