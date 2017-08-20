@@ -1,5 +1,5 @@
  
- # Configuring 10-Bit ADC(Internal) of TI MSP430G2553 using ADC10 Interrupt & communicating using UART Interrupt of TI MSP430
+ # Configuring & Using 10-Bit ADC(Internal) of TI MSP430G2553 using ADC10 Interrupt & communicating using UART Interrupt of TI MSP430
  
  The Project here uses ADC10, 10-Bit Internal ADC Interrupt of TI 
  MSP430G2553 to sample Analogue values in the Interrupt routine,
