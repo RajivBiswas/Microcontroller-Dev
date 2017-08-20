@@ -1,5 +1,7 @@
 # Interfacing & Writing driver for a SCCB Interface Camera, OV7670 with Arduino
 
+![Alt text](https://github.com/RajivBiswas/Microcontroller-Dev/blob/Arduino_AtMega/Arduino_AtMega/OV7670_with_AL422BFrameBuffer/Artikel4.png "Complete Setup")
+
 I recently completed this project at my Home here.  Here’s a bare metal Camera
 Sensor, OV7670 for which I have written the driver on my Arduino Board, Arduino 
 Mega 2560 to control the various VIDEO Signals like HREF, PCLK, VSYNC, WREN, et 
