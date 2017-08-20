@@ -1,1 +1,0 @@
-"./main.obj" "./usi_i2c.obj" "../lnk_msp430g2452.cmd" -llibc.a 
