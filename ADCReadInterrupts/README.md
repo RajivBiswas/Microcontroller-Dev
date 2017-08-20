@@ -17,8 +17,8 @@ The EQVal1 array is an Unsigned Integer array of size 1 (4-Bytes) on
 TI MSP430GXX platform. But since the ADC value would be in 10-bit, 1023
 Max, hence we need to consider only 10 bits from the Least significant 
 Bit. Thus, two unsigned byte variables val1 & val2 are considered here. \
-val2 - stores the least 8-bits of the ADC Sample \
-val1 - stores the last 2-bits of the ADC Sample
+val2 - stores the least 8-bits of the 10-Bit ADC Sample \
+val1 - stores the most significant 2-bits of the 10-Bit ADC Sample
     
 The ADC Channel that has been configured here is ADC Channel, A5, P1.5
 ```
@@ -37,7 +37,7 @@ USCI_A0.
     
 The Program has been compiled & built on \
 Code Composer Studio \
-Version: 7.1.0.00016 \
+Version: 7.1.0.00016 
     
 Connect your Analog Input +ve  to A5, P1.5 & -ve to the Gnd of your TI 
 MSP 430G2 LaunchPad Board & connect a FTDI Serial UART Cable or PL203
