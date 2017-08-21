@@ -47,7 +47,7 @@ corresponding Vcc & Gnd of the TI MSP430G Launchpad Board.
 Also please ensure to connect the RxD & TxDJumpers in Vertical Position,
 & not in Horizontal Position, as shown in the attached png file.
 
-![Alt text](https://drive.google.com/drive/folders/0B6Cu_2GN5atpUFc1ZGJhaGJHZ00/Tx_Rx_TI_MSP430_UART.png "Pin Headers, Launchpad MSP430EXP-G2")
+![Alt text](https://drive.google.com/open?id=0B6Cu_2GN5atpUVVoOXk4a1JQV1U/Tx_Rx_TI_MSP430_UART.png "Pin Headers, Launchpad MSP430EXP-G2")
 
 Regards, \
 Rajiv.
