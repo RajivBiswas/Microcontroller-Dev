@@ -2,7 +2,7 @@
 ```
 Note: Before starting this Project on your TI MSP430 Launchpad, please ensure to remove P1.6 LED Jumper
 on the board, as P1.6 is used as SDA. Also, ensure that your ADS1115 Module has Pull-Ups(around 10k) on 
-the SDA & SCL Lines
+the SDA & SCL Lines.
 ```
 TI’s MSP430 chips are rather interesting – they’re low power, very capable, and available for under 
 a dollar in most cases. Some of these chips, though, don’t have native SPI or I2C interfaces;instead, 
