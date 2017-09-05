@@ -30,5 +30,5 @@ Please follow the link to my Blog for more understanding & discussion,
 https://www.linkedin.com/pulse/ti-msp-430-uart-i2c-adcs-rajiv-biswas?published=t
 ```
 
-Regards,
+Regards,\
 Rajiv.
