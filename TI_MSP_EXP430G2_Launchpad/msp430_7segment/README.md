@@ -29,6 +29,7 @@ Please follow the link to my Blog for more understanding & discussion,
 ```
 https://www.linkedin.com/pulse/ti-msp-430-uart-i2c-adcs-rajiv-biswas?published=t
 ```
+![Alt text](https://github.com/RajivBiswas/Microcontroller-Dev/blob/master/TI_MSP_EXP430G2_Launchpad/msp430_7segment/InterfacingTriPaired_7SegmentDisplay_with_MSP430.jpg "Schematics of the same.")
 
 Regards,\
 Rajiv.
